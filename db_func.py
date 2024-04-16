@@ -34,3 +34,15 @@ def add_marked_user(user_id: int, text: str):
     connect.commit()
 
 
+def get_group_id():
+    cur.execute('SELECT group_id FROM groups')
+    data = [-int(abs(i[0])) for i in cur.fetchall()]
+
+    return data
+
+
+def get_bad_words():
+    cur.execute('SELECT word FROM stop_words')
+    data = [i[0] for i in cur.fetchall()]
+
+    return data
