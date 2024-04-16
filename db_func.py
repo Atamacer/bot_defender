@@ -17,7 +17,7 @@ cur = connect.cursor()
 # добавление группы в БД
 def add_new_group(group_id: int, group_name: str):
     cur.execute('INSERT INTO groups (group_id, group_name) VALUES (?, ?)',
-    (group_id, group_name))
+                (group_id, group_name))
     connect.commit()
 
 
@@ -32,5 +32,6 @@ def add_marked_user(user_id: int, text: str):
     cur.execute('INSERT INTO marked_users (user_id, text) VALUES (?, ?)',
                 (user_id, text))
     connect.commit()
+
 
 add_marked_user(123, 'лох')
