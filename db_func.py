@@ -34,4 +34,3 @@ def add_marked_user(user_id: int, text: str):
     connect.commit()
 
 
-add_marked_user(123, 'лох')
